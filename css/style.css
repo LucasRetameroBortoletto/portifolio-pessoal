@@ -8,7 +8,8 @@
     --grafite-claro: rgb(107, 107, 107);   
     --amarelo: #F2C230;                    
     --azul: rgb(47, 93, 158);              
-    --grade: rgba(47, 93, 158, 0.12);      
+    --grade: rgba(47, 93, 158, 0.12);
+    --amarelo-claro: #F7D768 ;       
 }
 
 * {
@@ -27,8 +28,13 @@ h1,h2,h3 {
     font-family: "Architects Daughter", cursive;
 }
 
+nav a {
+    text-decoration: none;
+    color: var(--grafite);
+}
+
 nav { 
-    margin: 20px;
+    margin: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,10 +45,19 @@ nav ul {
     gap: 20px;
 }
 
+
+
 nav ul li a {
     color: var(--grafite);
     text-decoration: none;  
 }
+
+main section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 
 #hero {
     display: flex;
@@ -50,8 +65,52 @@ nav ul li a {
     align-items: center; 
     flex-direction: column;
     min-height: 90vh;
+    max-width: none;
     background-image: 
-        linear-gradient(to right, var(--grade) 1px, transparent 1px),
+        linear-gradient(to bottom, transparent 70%, var(--papel)),
+         linear-gradient(to right, var(--grade) 1px, transparent 1px),
         linear-gradient(to bottom, var(--grade) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-size: 100% 100%, 24px 24px, 24px 24px;
+}
+
+#hero a {
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--grafite);
+    background: linear-gradient(to bottom, var(--amarelo-claro), var(--amarelo));;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px currentColor solid;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.45s cubic-bezier(0.3, 3, 0.5, 1)
+    
+}
+
+#hero a:hover {
+    transform: translateY(-3px);
+}
+
+#hero h1 {
+    margin-bottom: 6px;
+}
+
+@keyframes desenhar {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+ 
+}
+
+#hero h1::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: var(--amarelo);
+    border-radius: 3px;
+    animation: desenhar 1.5s ease-in-out forwards;
 }
