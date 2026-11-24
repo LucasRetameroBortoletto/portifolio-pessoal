@@ -34,7 +34,7 @@ h1,h2,h3 {
 
 h2 {
     font-size: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 header {
@@ -224,8 +224,8 @@ main section {
 
 .grupos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
 }
 
 #habilidades h3 {
