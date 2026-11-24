@@ -20,7 +20,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
 }
 
 body {
@@ -35,6 +34,7 @@ h1,h2,h3 {
 
 h2 {
     font-size: 25px;
+    margin-bottom: 30px;
 }
 
 header {
@@ -63,10 +63,6 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li a {
-    color: var(--grafite);
-    text-decoration: none;  
-}
 nav ul li {
     position: relative;
 }
@@ -88,17 +84,16 @@ nav ul li a:hover::after {
     transform: scaleX(1);
 }
 
-#portifolio { 
+#logo {
     transition: transform 0.2s ease;
-    cursor: pointer;
 }
 
-#portifolio:hover { 
+#logo:hover {
     transform: translateY(-2px);
 }
 
 main section {
-    padding: 80px 20px;
+    padding: 80px 10px;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -112,7 +107,7 @@ main section {
     max-width: none;
     background-image: 
         linear-gradient(to bottom, transparent 70%, var(--papel)),
-         linear-gradient(to right, var(--grade) 1px, transparent 1px),
+        linear-gradient(to right, var(--grade) 1px, transparent 1px),
         linear-gradient(to bottom, var(--grade) 1px, transparent 1px);
     background-size: 100% 100%, 24px 24px, 24px 24px;
 }
@@ -122,17 +117,18 @@ main section {
     display: inline-block;
     text-decoration: none;
     color: var(--grafite);
-    background: linear-gradient(to bottom, var(--amarelo-claro), var(--amarelo));;
+    background: linear-gradient(to bottom, var(--amarelo-claro), var(--amarelo));
     padding: 4px 10px;
     border-radius: 6px;
     border: 1px currentColor solid;
-    transition: transform 0.2s ease-in-out;
-    transition: transform 0.45s cubic-bezier(0.3, 3, 0.5, 1)
-    
+    /* volta com "quique" ao tirar o mouse */
+    transition: transform 0.45s cubic-bezier(0.3, 3, 0.5, 1);
 }
 
 #hero a:hover {
     transform: translateY(-3px);
+    /* subida suave ao passar o mouse */
+    transition: transform 0.2s ease-out;
 }
 
 #hero h1 {
@@ -159,11 +155,6 @@ main section {
     animation: desenhar 1.5s ease-in-out forwards;
 }
 
-#projetos h2 {
-    margin-bottom: 30px;
-
-}
-
 .cards {
     display: grid;
     /*Grid responsivo automático: as colunas se ajustam sozinhas ao tamanho
@@ -180,20 +171,24 @@ main section {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    transition: transform 0.3s ease;
 }
+
 .card img {
     width: 100%;
     border-radius: 4px;
 }
 
-.card ul {
+.card ul,
+#habilidades ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
 }
 
-.card li {
+.card li,
+#habilidades li {
     font-size: 0.8rem;
     padding: 5px;
     border-radius: 4px;
@@ -216,6 +211,27 @@ main section {
     transform: rotate(0) scale(1.03);
 }
 
-.card {
-    transition: transform 0.3s ease;
+.sobre-texto {
+    column-count: 2;
+    column-gap: 48px;
+    column-rule: 1px dashed var(--grade)
 }
+
+.sobre-texto p{
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.grupos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+#habilidades h3 {
+    margin-top: 24px;
+}
+
+
+
+
